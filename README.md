@@ -1,10 +1,12 @@
 # 19CS301-Module-6
 EX: 6.1   POLYMORPHISM
 
-### AIM: To Create two specific classes- Beans and Mango. Along with that, create a generic function that tells us the type and color of the object we pass. Mind you, since we have passed only “obj” through it, this obj can be any object.
+### AIM: 
+To Create two specific classes- Beans and Mango. Along with that, create a generic function that tells us the type and color of the object we pass. Mind you, since we have passed only “obj” through it, this obj can be any object.
 
 
 ### ALGORITHM:
+
 Step1: create class Beans and def a function type and color
 
 Step 2: create a class Mango and def a function type and color
@@ -34,20 +36,24 @@ class Mango:
          func(obj_mango)
 ```
 ### OUTPUT:
-![image](https://github.com/user-attachments/assets/b41a3e12-896b-4f6c-a9b2-19045a5088f9)
+![image](https://github.com/gokulkrishnan2005/19CS301-Module-6/blob/main/20.png)
 
 
-### RESULT: Thus, the program has been successfully executed.
+### RESULT: 
+Thus, the program has been successfully executed.
 
 EXP.No: 6.b OPERATOR OVERLOADING
 
-### AIM: write a python program to overload less than operator
+### AIM:
+write a python program to overload less than operator
 ###ALGORITHM:
+
 Step1 :create class A and def init	 
 
 Step2: def it	with a condition if self.a < o.a 
 
 Step 3: call the function and execute the program.
+
 ### PROGRAM:
 ```
 class A :
@@ -62,17 +68,22 @@ ob1 = A(2)
 ob2 = A(3)
 print(ob1<ob2)
 ```
-###OUTPUT:
-![image](https://github.com/user-attachments/assets/dae03d17-1004-424e-a179-ef62fd2681bd)
+### OUTPUT:
+
+![image](https://github.com/gokulkrishnan2005/19CS301-Module-6/blob/main/21.png)
 
 
 
-###RESULT: Thus, the program has been successfully executed.
+### RESULT: 
+Thus, the program has been successfully executed.
+
 EX: 6.3 ABSTRACT CLASS METHOD
 
-### AIM: To Create the abstract method calculate_area which is of the abstract class 'Shape'
+### AIM:
+To Create the abstract method calculate_area which is of the abstract class 'Shape'
 
 ### ALGORITHM:
+
 Step1:Get input from the user
 
 Step2:put class function to define the function using self
@@ -99,33 +110,124 @@ a.calculate_area()
 b.calculate_area()
 ```
 ### OUTPUT:
-![image](https://github.com/user-attachments/assets/a4c70e22-b3e0-417a-86d7-41f547c9d60d)
+![image](https://github.com/gokulkrishnan2005/19CS301-Module-6/blob/main/22.png)
 
 
-### RESULT: Thus, the program has been successfully executed.
+### RESULT: 
+Thus, the program has been successfully executed.
 
 EXP.No: 6.4     ENCAPSULATION
-### AIM: To Implement Encapsulation using private members –of a class rectangle with private variables length,width.
-###ALGORITHM: Step1: put class function to define the function using self Step2: By using the function to find the area of the rectangle Step3: Execute the program.
-###PROGRAM:
+### AIM:
+To Implement Encapsulation using concepts to access the private variables in ABC class. 
+
+### ALGORITHM: 
+
+Define class ABC with a private variable __a.
+
+Create a constructor __init__() to initialize __a = 5.
+
+Define method fun() to print a public message.
+
+Define method fun1() to print a private message and the value of __a.
+
+Create object x of class ABC.
+
+Call x.fun() to execute the public method.
+
+Call x.fun1() to execute the method accessing the private variable.
+
+### PROGRAM:
 ```
-class Rectangle:
- 	length = 0
- 	breadth = 0
-  def	init	(self):
-       self.	length = 5
-       self.	breadth = 3
-  print(self.	length)
-  print(self.	breadth)
-rect = Rectangle()
+class ABC:
+    def __init__(self):
+        self.__a=5
+    def fun (self):
+        print("I am public class method")
+    def fun1(self):
+        print("I am private class method")
+        print(self.__a)
+x=ABC()
+x.fun()
+x.fun1()
 ```
 ### OUTPUT:
  
-![image](https://github.com/user-attachments/assets/ea434dc1-3f93-4a66-8828-1d815e9ff015)
+![image](https://github.com/gokulkrishnan2005/19CS301-Module-6/blob/main/23.png)
 
  
 
-### RESULT: Thus, the program has been successfully executed
+### RESULT:
+
+Thus, the program has been successfully executed
+
+EXP.No: 6.e SEB- abc module to create the abstract base class
+
+### AIM:
+import the abc module to create the abstract base class. Create the Car class that inherit the ABC class and define an abstract method named mileage().
+
+
+### ALGORITHM:
+
+Start
+
+Import ABC and abstractmethod from abc module.
+
+Define an abstract class Car that inherits from ABC.
+
+Inside Car, define a method show() using pass (no implementation).
+
+Define subclasses: Tesla, Suzuki, Duster, and Renault, each inheriting from Car.
+
+In each subclass, implement a method mileage() that prints the mileage of that car.
+
+Create an object t of class Tesla and call t.mileage().
+
+Create an object r of class Renault and call r.mileage().
+
+Create an object s of class Suzuki and call s.mileage().
+
+Create an object d of class Duster and call d.mileage().
+
+End
+### PROGRAM:
+```
+from abc import ABC, abstractmethod   
+class Car(ABC):   
+    def show(self):
+        pass
+  
+class Tesla(Car):   
+    def mileage(self):   
+        print("The mileage is 30kmph")   
+class Suzuki(Car):   
+    def mileage(self):   
+        print("The mileage is 25kmph ")   
+class Duster(Car):   
+     def mileage(self):   
+          print("The mileage is 24kmph ")   
+  
+class Renault(Car):   
+    def mileage(self):   
+            print("The mileage is 27kmph ")   
+          
+
+t=Tesla()
+t.mileage()
+r=Renault()
+r.mileage()
+s = Suzuki()   
+s.mileage()   
+d = Duster()   
+d.mileage()
+
+```
+### OUTPUT:
+![image](https://github.com/gokulkrishnan2005/19CS301-Module-6/blob/main/mod%206%20seb.png)
+
+
+### RESULT: 
+Thus, the program has been successfully executed.
+
 
 
 
